@@ -18,10 +18,10 @@
 :root {
   --bg-rgb: 255, 249, 234;
   --text-rgb: 29, 19, 21;
-  --muted-rgb: 68, 68, 68;
+  --muted-rgb: 89, 79, 81;
   --border-rgb: 234, 225, 202;
-  --hover-rgb: 238, 238, 238;
-  --pressed-rgb: 221, 221, 221;
+  --hover-rgb: 244, 235, 212;
+  --pressed-rgb: 251, 242, 219;
 
   --code-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
@@ -300,16 +300,16 @@ html.mobile [data-hidden-on-mobile=true] {
     }
 
     .XDocsPageNavigationSubmenu {
-      border-radius: 0.5rem;
+      border-radius: 1rem;
 
       .XDocsPageNavigationSubmenuItem:first-child {
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
       }
 
       .XDocsPageNavigationSubmenuItem:last-child {
-        border-bottom-left-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
       }
 
       .XDocsPageNavigationSubmenuItem {
@@ -438,6 +438,7 @@ html.mobile [data-hidden-on-mobile=true] {
         background-color: rgb(var(--nav-bg-rgb));
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
+        border: 1px solid rgb(var(--border-rgb));
         text-decoration: none;
         color: rgb(var(--nav-text-rgb));
 

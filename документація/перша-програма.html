@@ -9,7 +9,7 @@
 
   <meta name="description" content="">
 
-  <title>Документація Цілі</title>
+  <title>Перша програма | Документація Цілі</title>
 
   <link rel="icon" type="image/png" href="./ресурси/тема/ціль.лого.png" />
   <link rel="icon" sizes="any" type="image/svg+xml" href="./ресурси/тема/ціль.лого.svg">
@@ -31,7 +31,7 @@
 </div>
 <a
   href="./index.html"
-  class="XDocsPageNavigationItem active"
+  class="XDocsPageNavigationItem "
   data-navigation-item="Вступ"
 >
   Вступ
@@ -39,7 +39,7 @@
 <button
   class="XDocsPageNavigationItem"
   data-navigation-item="Практика"
-  data-navigation-item-expanded="false">
+  data-navigation-item-expanded="true">
   Практика
   <span class="XDocsPageNavigationItemArrow">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
@@ -50,11 +50,11 @@
 <div
   class="XDocsPageNavigationSubmenu"
   data-navigation-submenu="Практика"
-  data-navigation-submenu-shown="false"
+  data-navigation-submenu-shown="true"
 >
   <a
   href="./перша-програма.html"
-  class="XDocsPageNavigationSubmenuItem "
+  class="XDocsPageNavigationSubmenuItem active"
   data-navigation-item="Перша програма"
 >
   Перша програма
@@ -79,15 +79,31 @@
   </button>
   <div class="XDocsPageContent">
     
-    <h1>Вступ</h1>
-<p><subject>Ціль</subject> є простою, швидкою та компільованою мовою програмування на основі кириличної абетки, української
-мови та моєї свідомости.</p>
-<p><subject>Ціль</subject> має статичну типизацію.</p>
-<p>Керування памʼятю в <subject>Цілі</subject> ручне.</p>
+    <h1>Перша програма</h1>
+<p>Створіть файл <code>привіт.ц</code> та заповніть його кодом:</p>
+<pre><div class="XDocsCodeWrapper"><code class="hljs">зовнішня дія друк_ю8(значення: памʼять&lt;п8&gt;);
+
+дія старт() {
+  друк_ю8(ю8&quot;Вперед до Цілі!&quot;);
+}
+</code></div></pre>
+<p>Створіть файл <code>extension.cpp</code> та заповніть його кодом:</p>
+<pre><div class="XDocsCodeWrapper"><code class="hljs">#include &lt;iostream&gt;
+
+extern &quot;C&quot; void друк_ю8(unsigned char* value) {
+  std::cout &lt;&lt; value &lt;&lt; std::endl;
+}
+</code></div></pre>
+<p>Після цього скомпілюйте програму цією командою:</p>
+<pre><div class="XDocsCodeWrapper"><code class="hljs">ціль привіт сплавити привіт.ц extension.cpp
+</code></div></pre>
+<p>Та зрештою запустіть програму:</p>
+<pre><div class="XDocsCodeWrapper"><code class="hljs">./привіт
+</code></div></pre>
 
     <div class="XDocsPageContentBcFw">
+      <a data-is-prev="true" href="./index.html">Відступ</a>
       
-      <a data-is-next="true" href="./перша-програма.html">Наступ</a >
     </div>
   </div>
 </div>
