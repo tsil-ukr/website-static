@@ -19,6 +19,7 @@
   --border-rgb: 234, 225, 202;
   --hover-rgb: 244, 235, 212;
   --pressed-rgb: 251, 242, 219;
+  --code-bg-rgb: 29, 19, 21;
   --code-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --nav-bgbg-rgb: 255, 246, 224;
   --nav-bg-rgb: 255, 246, 224;
@@ -48,19 +49,19 @@ html {
 
 html.dark {
   --bg-rgb: 0, 0, 0;
-  --text-rgb: 255, 255, 255;
-  --muted-rgb: 153, 153, 153;
-  --border-rgb: 34, 34, 34;
-  --hover-rgb: 24, 24, 24;
-  --pressed-rgb: 31, 31, 31;
-  --code-shadow: 0 0 0 1px #333;
-  --nav-bgbg-rgb: 18, 18, 18;
-  --nav-bg-rgb: 24, 24, 24;
-  --nav-text-rgb: 255, 255, 255;
-  --nav-hover-rgb: 31, 31, 31;
-  --nav-pressed-rgb: 38, 38, 38;
-  --nav-active-rgb: 255, 255, 255;
-  --nav-active-text-rgb: 0, 0, 0;
+  --text-rgb: 255, 249, 234;
+  --muted-rgb: 89, 79, 81;
+  --border-rgb: 29, 19, 21;
+  --hover-rgb: 29, 19, 21;
+  --pressed-rgb: 39, 29, 31;
+  --code-bg-rgb: 0, 0, 0;
+  --nav-bgbg-rgb: 5, 0, 1;
+  --nav-bg-rgb: 5, 0, 1;
+  --nav-text-rgb: 255, 249, 234;
+  --nav-hover-rgb: 29, 19, 21;
+  --nav-pressed-rgb: 39, 29, 31;
+  --nav-active-rgb: 155, 80, 58;
+  --nav-active-text-rgb: 9, 0, 1;
 }
 
 html.dark img:not(.no-dark-shadow), html.dark svg:not(.no-dark-shadow) {
@@ -189,7 +190,7 @@ html.mobile .XDocsPage .XDocsPageNavigation .XDocsPageNavigationFooter {
   right: 0;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: calc(100% + 1rem);
   border-right: none;
 }
 
@@ -395,7 +396,7 @@ html.mobile .XDocsPage .XDocsPageContent {
   margin-left: auto;
 }
 
-code:not(.hljs) {
+code:not(.shikicode) {
   padding: 0.1rem 0.5rem;
   background-color: black;
   color: white;
@@ -406,25 +407,27 @@ code:not(.hljs) {
   box-shadow: var(--code-shadow);
 }
 
-.hljs {
-  background-color: black !important;
+.XDocsCodeWrapper {
+  position: relative;
+  z-index: 0;
+  border-radius: 1rem;
+  animation: none;
 }
-.hljs::-webkit-scrollbar {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 0.25rem;
+.XDocsCodeWrapper .shiki {
+  z-index: -1;
+  border-radius: inherit;
+  font-weight: 500;
+  background-color: rgb(var(--code-bg-rgb)) !important;
+  font-size: 1rem;
+  font-family: "Fira Code", monospace;
+  font-weight: 500;
+  overflow-x: auto;
+  min-height: 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgb(var(--border-rgb));
 }
-.hljs::-webkit-scrollbar-track {
-  background: black;
-}
-.hljs::-webkit-scrollbar-thumb {
-  background: #5c6370;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 0.25rem;
-}
-.hljs::-webkit-scrollbar-thumb:hover {
-  background: #abb2bf;
+.XDocsCodeWrapper .shiki::-webkit-scrollbar {
+  display: none;
 }
 
 .XDocsCodeImages {
@@ -457,25 +460,6 @@ html.mobile .XDocsCodeImages img {
 }
 html.mobile .XDocsCodeImages img:nth-child(5) {
   height: 1.25rem;
-}
-
-.XDocsCodeWrapper {
-  position: relative;
-  z-index: 1;
-  background: black;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  box-shadow: var(--code-shadow);
-}
-html.mobile .XDocsCodeWrapper {
-  margin-left: -2rem;
-  margin-right: -2rem;
-  border-radius: 0;
-  padding: 0.5rem 1rem;
-}
-
-.XDocsCodeWrapper pre {
-  margin: 0;
 }
 
 table {
