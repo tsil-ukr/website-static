@@ -4,7 +4,7 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Overpass  ";
+  font-family: "Overpass";
   src: url("Overpass/Overpass-Italic.ttf") format("truetype");
   font-style: italic;
 }
@@ -21,7 +21,6 @@
   --pressed-rgb: 251, 242, 219;
   --code-bg-rgb: 29, 19, 21;
   --code-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  --nav-bgbg-rgb: 255, 246, 224;
   --nav-bg-rgb: 255, 246, 224;
   --nav-text-rgb: 29, 19, 21;
   --nav-hover-rgb: 234, 225, 202;
@@ -55,7 +54,6 @@ html.dark {
   --hover-rgb: 29, 19, 21;
   --pressed-rgb: 39, 29, 31;
   --code-bg-rgb: 0, 0, 0;
-  --nav-bgbg-rgb: 5, 0, 1;
   --nav-bg-rgb: 5, 0, 1;
   --nav-text-rgb: 255, 249, 234;
   --nav-hover-rgb: 29, 19, 21;
@@ -117,7 +115,7 @@ html.mobile [data-hidden-on-mobile=true] {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  background: rgb(var(--nav-bgbg-rgb));
+  background: rgb(var(--nav-bg-rgb));
   padding: 0.5rem;
   border-right: 1px solid rgb(var(--border-rgb));
   scrollbar-width: thin;
