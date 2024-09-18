@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ціль.укр/0.21.0/документація/index.html</loc>
+  </url>
+  <url>
+    <loc>https://ціль.укр/0.21.0/документація/перша-програма.html</loc>
+  </url>
+  <url>
     <loc>https://ціль.укр/index.html</loc>
-  </url>
-  <url>
-    <loc>https://ціль.укр/документація/index.html</loc>
-  </url>
-  <url>
-    <loc>https://ціль.укр/документація/перша-програма.html</loc>
   </url>
 </urlset>
