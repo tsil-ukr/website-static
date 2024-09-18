@@ -30,7 +30,7 @@ function disableDarkMode() {
 }
 
 function checkDarkMode() {
-    const currentMode = localStorage.getItem("kdb_ukr_light_mode");
+    const currentMode = localStorage.getItem("tsil_ukr_light_mode");
     if (currentMode === "auto") {
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
             enableDarkMode();
@@ -71,8 +71,8 @@ function checkDarkMode() {
     }
 }
 
-if (!localStorage.getItem("kdb_ukr_light_mode")) {
-    localStorage.setItem("kdb_ukr_light_mode", "auto");
+if (!localStorage.getItem("tsil_ukr_light_mode")) {
+    localStorage.setItem("tsil_ukr_light_mode", "auto");
 }
 
 document.querySelector(".XDocsPageNavigationFooter").innerHTML += `<button class="XDocsPageNavigationFooterConfigButton">
@@ -84,13 +84,13 @@ document.querySelector(".XDocsPageNavigationFooter").innerHTML += `<button class
 checkDarkMode();
 
 document.querySelector(".XDocsPageNavigationFooterConfigButton").addEventListener("click", () => {
-    const currentMode = localStorage.getItem("kdb_ukr_light_mode");
+    const currentMode = localStorage.getItem("tsil_ukr_light_mode");
     if (currentMode === "auto") {
-        localStorage.setItem("kdb_ukr_light_mode", "light");
+        localStorage.setItem("tsil_ukr_light_mode", "light");
     } else if (currentMode === "light") {
-        localStorage.setItem("kdb_ukr_light_mode", "dark");
+        localStorage.setItem("tsil_ukr_light_mode", "dark");
     } else {
-        localStorage.setItem("kdb_ukr_light_mode", "auto");
+        localStorage.setItem("tsil_ukr_light_mode", "auto");
     }
     checkDarkMode();
 });
