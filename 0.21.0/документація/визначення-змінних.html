@@ -9,7 +9,7 @@
 
   <meta name="description" content="">
 
-  <title>Перша програма | Документація Цілі 0.21.0</title>
+  <title>Визначення змінних | Документація Цілі 0.21.0</title>
 
   <link rel="icon" type="image/png" href="./ресурси/тема/ціль.лого.png" />
   <link rel="icon" sizes="any" type="image/svg+xml" href="./ресурси/тема/ціль.лого.svg">
@@ -54,7 +54,7 @@
 >
   <a
   href="./перша-програма.html"
-  class="XDocsPageNavigationSubmenuItem active"
+  class="XDocsPageNavigationSubmenuItem "
   data-navigation-item="Перша програма"
 >
   Перша програма
@@ -68,7 +68,7 @@
 </a>
 <a
   href="./визначення-змінних.html"
-  class="XDocsPageNavigationSubmenuItem "
+  class="XDocsPageNavigationSubmenuItem active"
   data-navigation-item="Визначення змінних"
 >
   Визначення змінних
@@ -128,31 +128,17 @@
   </button>
   <div class="XDocsPageContent">
     
-    <h1>Перша програма</h1>
-<p>Створіть файл <code>привіт.ц</code> та заповніть його кодом:</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">зовнішня</span><span style="color:#F97583"> дія</span><span style="color:#B392F0"> друк_ю8</span><span style="color:#E1E4E8">(значення: </span><span style="color:#79B8FF">памʼять</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">п8</span><span style="color:#E1E4E8">>);</span></span>
+    <h1>Визначення змінних</h1>
+<p>Визначити змінну ціль можна використовуючи слово <code>змінна</code>:</p>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">змінна</span><span style="color:#E1E4E8"> число_ПІ: </span><span style="color:#79B8FF">дійсне</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">3.14</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583">дія</span><span style="color:#B392F0"> старт</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#B392F0">  друк_ю8</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">ю8</span><span style="color:#9ECBFF">"Вперед до Цілі!"</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">число_ПІ = </span><span style="color:#79B8FF">3.14</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// пройде</span></span>
 <span class="line"></span></code></pre></div></pre>
-<p>Створіть файл <code>extension.cpp</code> та заповніть його кодом:</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">#include</span><span style="color:#9ECBFF"> &#x3C;iostream></span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">extern</span><span style="color:#9ECBFF"> "C"</span><span style="color:#F97583"> void</span><span style="color:#E1E4E8"> друк</span><span style="color:#B392F0">_ю8</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">unsigned</span><span style="color:#F97583"> char*</span><span style="color:#E1E4E8"> value) {</span></span>
-<span class="line"><span style="color:#B392F0">  std</span><span style="color:#E1E4E8">::cout </span><span style="color:#F97583">&#x3C;&#x3C;</span><span style="color:#E1E4E8"> value </span><span style="color:#F97583">&#x3C;&#x3C;</span><span style="color:#B392F0"> std</span><span style="color:#E1E4E8">::endl;</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span></code></pre></div></pre>
-<p>Після цього скомпілюйте програму цією командою:</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#B392F0">ціль</span><span style="color:#9ECBFF"> привіт</span><span style="color:#9ECBFF"> сплавити</span><span style="color:#9ECBFF"> привіт.ц</span><span style="color:#9ECBFF"> extension.cpp</span></span>
-<span class="line"></span></code></pre></div></pre>
-<p>Та зрештою запустіть програму:</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#B392F0">./привіт</span></span>
-<span class="line"></span></code></pre></div></pre>
+<p>Змінна ціль має ті ж властивості як і ціль, окрім того, що її значення можна перевизначити.</p>
 
     <div class="XDocsPageContentBcFw">
-      <a data-is-prev="true" href="./index.html">Відступ</a>
-      <a data-is-next="true" href="./визначення-цілей.html">Наступ</a >
+      <a data-is-prev="true" href="./визначення-цілей.html">Відступ</a>
+      <a data-is-next="true" href="./визначення-сталих.html">Наступ</a >
     </div>
   </div>
 </div>
