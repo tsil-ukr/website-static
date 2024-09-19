@@ -9,7 +9,7 @@
 
   <meta name="description" content="">
 
-  <title>Створення секцій | Документація Цілі 0.21.0</title>
+  <title>Виконання дій | Документація Цілі 0.21.0</title>
 
   <link rel="icon" type="image/png" href="./ресурси/тема/ціль.лого.png" />
   <link rel="icon" sizes="any" type="image/svg+xml" href="./ресурси/тема/ціль.лого.svg">
@@ -96,7 +96,7 @@
 </a>
 <a
   href="./виконання-дій.html"
-  class="XDocsPageNavigationSubmenuItem "
+  class="XDocsPageNavigationSubmenuItem active"
   data-navigation-item="Виконання дій"
 >
   Виконання дій
@@ -110,7 +110,7 @@
 </a>
 <a
   href="./створення-секцій.html"
-  class="XDocsPageNavigationSubmenuItem active"
+  class="XDocsPageNavigationSubmenuItem "
   data-navigation-item="Створення секцій"
 >
   Створення секцій
@@ -142,35 +142,19 @@
   </button>
   <div class="XDocsPageContent">
     
-    <h1>Створення секцій</h1>
-<p>Створити та визначити секцію можна використовуючи слово <code>секція</code>:</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">секція</span><span style="color:#B392F0"> двигуни</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#F97583">  структура</span><span style="color:#B392F0"> ІоннийДвигун</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#E1E4E8">    потужність: </span><span style="color:#79B8FF">ціле</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">  }</span></span>
-<span class="line"><span style="color:#E1E4E8">  </span></span>
-<span class="line"><span style="color:#F97583">  дія</span><span style="color:#B392F0"> запустити</span><span style="color:#E1E4E8">(двигун: ІоннийДвигун) {</span></span>
-<span class="line"><span style="color:#B392F0">    друк_ю8</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">ю8</span><span style="color:#9ECBFF">"Запускаємо іонний двигун..."</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#E1E4E8">  }</span></span>
-<span class="line"><span style="color:#E1E4E8">  </span></span>
-<span class="line"><span style="color:#F97583">  дія</span><span style="color:#B392F0"> зупинити</span><span style="color:#E1E4E8">(двигун: ІоннийДвигун);</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
+    <h1>Виконання дій</h1>
+<p>Записати виконання дії можна так:</p>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#B392F0">додати</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">)</span></span>
 <span class="line"></span></code></pre></div></pre>
-<p>Секцію можна доповнювати:</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">секція</span><span style="color:#B392F0"> двигуни</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#F97583">  дія</span><span style="color:#B392F0"> зупинити</span><span style="color:#E1E4E8">(двигун: ІоннийДвигун);</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">секція</span><span style="color:#B392F0"> двигуни</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#F97583">  дія</span><span style="color:#B392F0"> зупинити</span><span style="color:#E1E4E8">(двигун: ІоннийДвигун) {</span></span>
-<span class="line"><span style="color:#B392F0">    друк_ю8</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">ю8</span><span style="color:#9ECBFF">"Зупиняємо іонний двигун..."</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<p>Де дія <code>додати</code> визначенна як:</p>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">дія</span><span style="color:#B392F0"> сума</span><span style="color:#E1E4E8">(а: </span><span style="color:#79B8FF">ціле</span><span style="color:#E1E4E8">, б: </span><span style="color:#79B8FF">ціле</span><span style="color:#E1E4E8">): </span><span style="color:#79B8FF">ціле</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  вернути</span><span style="color:#E1E4E8"> а + б;</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre></div></pre>
 
     <div class="XDocsPageContentBcFw">
-      <a data-is-prev="true" href="./створення-структур.html">Відступ</a>
-      <a data-is-next="true" href="./створення-синонімів.html">Наступ</a >
+      <a data-is-prev="true" href="./створення-дій.html">Відступ</a>
+      <a data-is-next="true" href="./створення-структур.html">Наступ</a >
     </div>
   </div>
 </div>
