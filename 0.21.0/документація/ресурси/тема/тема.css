@@ -25,7 +25,7 @@
   --nav-text-rgb: 29, 19, 21;
   --nav-hover-rgb: 234, 225, 202;
   --nav-pressed-rgb: 224, 215, 192;
-  --nav-active-rgb: 155, 80, 58;
+  --nav-active-rgb: 125, 46, 52;
   --nav-active-text-rgb: 255, 255, 255;
 }
 
@@ -58,7 +58,7 @@ html.dark {
   --nav-text-rgb: 255, 249, 234;
   --nav-hover-rgb: 29, 19, 21;
   --nav-pressed-rgb: 39, 29, 31;
-  --nav-active-rgb: 155, 80, 58;
+  --nav-active-rgb: 125, 46, 52;
   --nav-active-text-rgb: 9, 0, 1;
 }
 
@@ -87,7 +87,7 @@ a {
 }
 
 subject, .XDocsTextSubject {
-  color: #9B503A;
+  color: #7D2E34;
   font-weight: bold;
 }
 
