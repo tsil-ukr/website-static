@@ -81,13 +81,6 @@
   Визначення змінних
 </a>
 <a
-  href="./визначення-сталих.html"
-  class="XDocsPageNavigationSubmenuItem "
-  data-navigation-item="Визначення сталих"
->
-  Визначення сталих
-</a>
-<a
   href="./створення-дій.html"
   class="XDocsPageNavigationSubmenuItem "
   data-navigation-item="Створення дій"
@@ -158,48 +151,55 @@
     
     <h1>Вбудовані типи</h1>
 <h2>ціле</h2>
-<p><code>ціле</code> містить ціле число 64 біт. Може містити як позитивне так і негативне значення. Має синоніми <code>ціле64</code> та <code>ц64</code>.</p>
+<p><code>ціле</code> містить ціле число розміром залежно від системи. Може містити як позитивне так і негативне значення.</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">ціле</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> б: </span><span style="color:#79B8FF">ц64</span><span style="color:#E1E4E8"> = -</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre></div></pre>
+<h2>ц64</h2>
+<p><code>ц64</code> містить ціле число 64 біт. Може містити як позитивне так і негативне значення.</p>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">ц64</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
 <h2>ц32</h2>
-<p><code>ц32</code> містить ціле число 32 біт. Може містити як позитивне так і негативне значення. Має синонім <code>ціле32</code>.</p>
+<p><code>ц32</code> містить ціле число 32 біт. Може містити як позитивне так і негативне значення.</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">ц32</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> б: ціле32 = -</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
 <h2>ц16</h2>
-<p><code>ц16</code> містить ціле число 16 біт. Може містити як позитивне так і негативне значення. Має синонім <code>ціле16</code>.</p>
+<p><code>ц16</code> містить ціле число 16 біт. Може містити як позитивне так і негативне значення.</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">ц16</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> б: ціле16 = -</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
 <h2>ц8</h2>
-<p><code>ц8</code> містить ціле число 8 біт. Може містити як позитивне так і негативне значення. Має синонім <code>ціле8</code>.</p>
+<p><code>ц8</code> містить ціле число 8 біт. Може містити як позитивне так і негативне значення.</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">ц8</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> б: ціле8 = -</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
 <h2>позитивне</h2>
-<p><code>позитивне</code> містить позитивне число 64 біт. Може містити лише позитивне значення. Має синоніми <code>позитивне64</code> та <code>п64</code>.</p>
+<p><code>позитивне</code> містить позитивне число розміром залежно від системи. Може містити лише позитивне (беззнакове) значення.</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">позитивне</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
+<h2>п64</h2>
+<p><code>п64</code> містить позитивне число 64 біт. Може містити лише позитивне (беззнакове) значення.</p>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">п64</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre></div></pre>
 <h2>п32</h2>
-<p><code>п32</code> містить позитивне число 32 біт. Може містити лише позитивне значення. Має синонім <code>позитивне32</code>.</p>
+<p><code>п32</code> містить позитивне число 32 біт. Може містити лише позитивне (беззнакове) значення.</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">п32</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
 <h2>п16</h2>
-<p><code>п16</code> містить позитивне число 16 біт. Може містити лише позитивне значення. Має синонім <code>позитивне16</code>.</p>
+<p><code>п16</code> містить позитивне число 16 біт. Може містити лише позитивне (беззнакове) значення.</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">п16</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
 <h2>п8</h2>
-<p><code>п8</code> містить позитивне число 8 біт. Може містити лише позитивне значення. Має синонім <code>позитивне8</code>.</p>
+<p><code>п8</code> містить позитивне число 8 біт. Може містити лише позитивне (беззнакове) значення.</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">п8</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
 <h2>дійсне</h2>
-<p><code>дійсне</code> містить дійсне число 64 біт. Може містити як позитивне так і негативне значення. Має синоніми <code>дійсне64</code> та
-<code>д64</code>.</p>
+<p><code>дійсне</code> містить дійсне число 64 біт. Може містити як позитивне так і негативне значення.</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">дійсне</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">3.14</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
+<h2>д64</h2>
+<p><code>д64</code> містить дійсне число 64 біт. Може містити як позитивне так і негативне значення.</p>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">д64</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">3.14</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre></div></pre>
 <h2>д32</h2>
-<p><code>д32</code> містить дійсне число 32 біт. Може містити як позитивне так і негативне значення. Має синонім <code>дійсне32</code>.</p>
+<p><code>д32</code> містить дійсне число 32 біт. Може містити як позитивне так і негативне значення.</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">д32</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">3.14</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
 <h2>логічне</h2>
@@ -207,21 +207,17 @@
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">логічне</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">так</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> б: </span><span style="color:#79B8FF">логічне</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">ні</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
-<h2>невідома_комірка</h2>
-<p><code>невідома_комірка</code> містить адресу на обʼєкт невідомого типу.</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: невідома_комірка = </span><span style="color:#79B8FF">пусто</span><span style="color:#E1E4E8">;</span></span>
+<h2>адреса</h2>
+<p><code>адреса</code> містить адресу.</p>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">адреса</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">пусто</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
 <h2>Т[к]</h2>
 <p><code>Т[к]</code> містить масив обʼєктів типу <code>Т</code> розміром <code>к</code>.</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">ціле</span><span style="color:#E1E4E8">[</span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">] = </span><span style="color:#79B8FF">ціле</span><span style="color:#E1E4E8">[</span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">] { </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8"> }; </span><span style="color:#6A737D">// масив на стопці розміром 5 елементів</span></span>
 <span class="line"></span></code></pre></div></pre>
-<h2>комірка&lt;Т&gt;</h2>
-<p><code>комірка&lt;Т&gt;</code> містить адресу на обʼєкт типу <code>Т</code>.</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">комірка</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">ціле</span><span style="color:#E1E4E8">> = </span><span style="color:#B392F0">виділити</span><span style="color:#E1E4E8">&#x3C;ціле>();</span></span>
-<span class="line"></span></code></pre></div></pre>
-<h2>памʼять&lt;Т&gt;</h2>
-<p><code>памʼять&lt;Т&gt;</code> містить адресу на початок (перший елемент) масиву обʼєктів типу <code>Т</code>.</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">памʼять</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">п8</span><span style="color:#E1E4E8">> = </span><span style="color:#B392F0">виділити</span><span style="color:#E1E4E8">&#x3C;п8>(</span><span style="color:#79B8FF">256</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// масив в кучі розміром 256 байт</span></span>
+<h2>адреса&lt;Т&gt;</h2>
+<p><code>адреса&lt;Т&gt;</code> містить адресу на обʼєкт типу <code>Т</code>.</p>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> а: </span><span style="color:#79B8FF">адреса</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">ціле</span><span style="color:#E1E4E8">> = </span><span style="color:#B392F0">malloc</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">ціле</span><span style="color:#E1E4E8">::розмір) </span><span style="color:#F97583">як</span><span style="color:#79B8FF"> адреса</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">ціле</span><span style="color:#E1E4E8">>;</span></span>
 <span class="line"></span></code></pre></div></pre>
 <h2>Т -&gt; Т</h2>
 <p><code>Т -&gt; Т</code> містить адресу на дію.</p>

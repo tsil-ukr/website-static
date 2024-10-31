@@ -81,13 +81,6 @@
   Визначення змінних
 </a>
 <a
-  href="./визначення-сталих.html"
-  class="XDocsPageNavigationSubmenuItem "
-  data-navigation-item="Визначення сталих"
->
-  Визначення сталих
-</a>
-<a
   href="./створення-дій.html"
   class="XDocsPageNavigationSubmenuItem "
   data-navigation-item="Створення дій"
@@ -158,21 +151,23 @@
     
     <h1>Перша програма</h1>
 <p>Створіть файл <code>привіт.ц</code> та заповніть його кодом:</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">зовнішня</span><span style="color:#F97583"> дія</span><span style="color:#B392F0"> друк_ю8</span><span style="color:#E1E4E8">(значення: </span><span style="color:#79B8FF">памʼять</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">п8</span><span style="color:#E1E4E8">>);</span></span>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">зовнішня</span><span style="color:#F97583"> дія</span><span style="color:#B392F0"> putchar</span><span style="color:#E1E4E8">(value: </span><span style="color:#79B8FF">п8</span><span style="color:#E1E4E8">): </span><span style="color:#79B8FF">ц32</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583">дія</span><span style="color:#B392F0"> старт</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">дія</span><span style="color:#B392F0"> друк_ю8</span><span style="color:#E1E4E8">(значення: </span><span style="color:#79B8FF">адреса</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">п8</span><span style="color:#E1E4E8">>) {</span></span>
+<span class="line"><span style="color:#F97583">  змінна</span><span style="color:#E1E4E8"> п: </span><span style="color:#79B8FF">позитивне</span><span style="color:#E1E4E8"> = </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  поки</span><span style="color:#E1E4E8"> значення[п] != </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">    putchar</span><span style="color:#E1E4E8">(значення[п]);</span></span>
+<span class="line"><span style="color:#E1E4E8">    п = п + </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#B392F0">  putchar</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">зовнішня</span><span style="color:#F97583"> дія</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">() {</span></span>
 <span class="line"><span style="color:#B392F0">  друк_ю8</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">ю8</span><span style="color:#9ECBFF">"Вперед до Цілі!"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre></div></pre>
-<p>Створіть файл <code>extension.cpp</code> та заповніть його кодом:</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">#include</span><span style="color:#9ECBFF"> &#x3C;iostream></span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">extern</span><span style="color:#9ECBFF"> "C"</span><span style="color:#F97583"> void</span><span style="color:#E1E4E8"> друк</span><span style="color:#B392F0">_ю8</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">unsigned</span><span style="color:#F97583"> char*</span><span style="color:#E1E4E8"> value) {</span></span>
-<span class="line"><span style="color:#B392F0">  std</span><span style="color:#E1E4E8">::cout </span><span style="color:#F97583">&#x3C;&#x3C;</span><span style="color:#E1E4E8"> value </span><span style="color:#F97583">&#x3C;&#x3C;</span><span style="color:#B392F0"> std</span><span style="color:#E1E4E8">::endl;</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span></code></pre></div></pre>
 <p>Після цього скомпілюйте програму цією командою:</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#B392F0">ціль</span><span style="color:#9ECBFF"> привіт</span><span style="color:#9ECBFF"> сплавити</span><span style="color:#9ECBFF"> привіт.ц</span><span style="color:#9ECBFF"> extension.cpp</span></span>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#B392F0">ціль</span><span style="color:#9ECBFF"> привіт</span><span style="color:#9ECBFF"> сплавити</span><span style="color:#9ECBFF"> привіт.ц</span></span>
 <span class="line"></span></code></pre></div></pre>
 <p>Та зрештою запустіть програму:</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#B392F0">./привіт</span></span>
