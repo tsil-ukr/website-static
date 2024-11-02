@@ -23,6 +23,8 @@
 
 html {
   --font-family: "Overpass", sans-serif;
+  --transition-duration: 0;
+  --code-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   width: 100%;
   height: 100%;
@@ -33,6 +35,9 @@ html {
   font-variant-ligatures: none;
 }
 
+html.transitions {
+  --transition-duration: 125ms;
+}
 
 html.dark img:not(.no-dark-shadow), html.dark svg:not(.no-dark-shadow) {
   filter: drop-shadow(0 0 1px white);
@@ -205,17 +210,16 @@ pre, code {
   margin-top: 1rem;
   max-width: calc(500px + 1rem);
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 48px;
+  grid-gap: 1rem;
 }
 
 @media (max-width: 768px) {
   .UiMainButtons {
     margin-top: 0.5rem;
-    flex-direction: column;
-    gap: 0.5rem;
+    grid-template-columns: 1fr 48px;
+    grid-gap: 0.5rem;
   }
 }
 
@@ -232,6 +236,10 @@ pre, code {
   font-weight: 500;
   text-decoration: none;
   text-align: center;
+}
+
+.UiMainButton svg {
+  height: 1rem;
 }
 
 .UiMainButton:hover {
@@ -264,6 +272,35 @@ pre, code {
   background: black;
   color: white;
   border: 4px solid black;
+}
+
+.UiMainButton.more {
+  width: 3rem;
+  min-width: 3rem;
+}
+
+.download-outside {
+  z-index: 1;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .download-inside {
+    display: none;
+  }
+
+  .download-outside {
+    display: flex;
+  }
+}
+
+[data-navigation-menu-toggle="true"]:not(.active) [data-close-icon=true] {
+  display: none;
+}
+
+[data-navigation-menu-toggle="true"].active [data-menu-icon=true] {
+  display: none;
 }
 
 .UiMainFooter {
@@ -405,3 +442,136 @@ code {
     --x: -360deg;
   }
 }
+
+.TsilNavigationMenu {
+  position: fixed;
+  z-index: 1001;
+  top: calc(var(--menu-top) + 64px);
+  left: calc(var(--menu-left) - 282px + 48px);
+  background-color: #fff6e0;
+  border: 4px solid #7D2E34;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 282px;
+  animation: menu-open var(--transition-duration) ease-in-out;
+  transform-origin: top right;
+  color: #7D2E34;
+}
+
+
+@media (max-width: 768px) {
+  .TsilNavigationMenu {
+    top: calc(var(--menu-top) + 56px);
+    left: calc(var(--menu-left) - calc(100% - 4rem) + 48px);
+    width: calc(100% - 4rem);
+  }
+}
+
+.TsilNavigationMenu:has(.TsilNavigationMenuItem:hover) {
+  border-color: #1d1315;
+  color: #1d1315;
+}
+
+.TsilNavigationMenu:has(.TsilNavigationMenuItem:active) {
+  border-color: black;
+  color: black;
+}
+
+@keyframes menu-open {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.TsilNavigationMenu[data-hidden=true] {
+  display: none;
+}
+
+.TsilNavigationMenuItem {
+  height: calc(3rem - 6px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 12px;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-duration) ease-in-out;
+  color: inherit;
+}
+
+.TsilNavigationMenuItem:hover {
+  background: #1d1315;
+  color: white;
+  cursor: pointer;
+}
+
+.TsilNavigationMenuItem:active {
+  background: black;
+  color: white;
+}
+
+/*
+.UiMainButton {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #7D2E34;
+  color: white;
+  border: 4px solid #7D2E34;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+}
+
+.UiMainButton svg {
+  height: 1rem;
+}
+
+.UiMainButton:hover {
+  background: #1d1315;
+  color: white;
+  border: 4px solid #1d1315;
+  cursor: pointer;
+}
+
+.UiMainButton:active {
+  background: black;
+  color: white;
+  border: 4px solid black;
+}
+
+.UiMainButton.outline {
+  background: transparent;
+  border: 4px solid #7D2E34;
+  color: #7D2E34;
+}
+
+.UiMainButton.outline:hover {
+  background: #1d1315;
+  color: white;
+  border: 4px solid #1d1315;
+  cursor: pointer;
+}
+
+.UiMainButton.outline:active {
+  background: black;
+  color: white;
+  border: 4px solid black;
+}
+
+ */
