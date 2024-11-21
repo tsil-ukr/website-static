@@ -1,0 +1,648 @@
+@font-face {
+  font-family: "Overpass";
+  src: url("Overpass/Overpass.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Overpass";
+  src: url("Overpass/Overpass-Italic.ttf") format("truetype");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Fira Code";
+  src: url("FiraCode.ttf") format("truetype");
+}
+:root {
+  --bg-rgb: 255, 249, 234;
+  --text-rgb: 29, 19, 21;
+  --muted-rgb: 89, 79, 81;
+  --border-rgb: 234, 225, 202;
+  --hover-rgb: 244, 235, 212;
+  --pressed-rgb: 251, 242, 219;
+  --code-bg-rgb: 29, 19, 21;
+  --code-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --nav-bg-rgb: 255, 246, 224;
+  --nav-text-rgb: 29, 19, 21;
+  --nav-hover-rgb: 234, 225, 202;
+  --nav-pressed-rgb: 224, 215, 192;
+  --nav-active-rgb: 125, 46, 52;
+  --nav-active-text-rgb: 255, 255, 255;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+  --font-family: "Overpass", sans-serif;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-family);
+  background: rgb(var(--bg-rgb));
+  color: rgb(var(--text-rgb));
+  font-feature-settings: "liga" 0;
+  font-variant-ligatures: none;
+}
+
+html.dark {
+  --bg-rgb: 0, 0, 0;
+  --text-rgb: 255, 249, 234;
+  --muted-rgb: 89, 79, 81;
+  --border-rgb: 29, 19, 21;
+  --hover-rgb: 29, 19, 21;
+  --pressed-rgb: 39, 29, 31;
+  --code-bg-rgb: 0, 0, 0;
+  --nav-bg-rgb: 5, 0, 1;
+  --nav-text-rgb: 255, 249, 234;
+  --nav-hover-rgb: 29, 19, 21;
+  --nav-pressed-rgb: 39, 29, 31;
+  --nav-active-rgb: 125, 46, 52;
+  --nav-active-text-rgb: 9, 0, 1;
+}
+
+html.dark img:not(.no-dark-shadow), html.dark svg:not(.no-dark-shadow) {
+  filter: drop-shadow(0 0 1px white);
+}
+
+button {
+  font-family: var(--font-family);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+pre, code {
+  font-family: "Fira Code", monospace !important;
+  font-weight: 500;
+}
+
+a {
+  color: rgb(var(--text-rgb));
+}
+
+subject, .XDocsTextSubject {
+  color: #7D2E34;
+  font-weight: bold;
+}
+
+keyword, .XDocsTextKeyword {
+  color: #c678dd;
+  font-weight: 500;
+}
+
+html.mobile [data-hidden-on-mobile=true] {
+  display: none;
+}
+
+.XDocsPage {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+}
+.XDocsPage .XDocsPageNavigation {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  width: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background: rgb(var(--nav-bg-rgb));
+  padding: 0.5rem;
+  border-right: 1px solid rgb(var(--border-rgb));
+  scrollbar-width: thin;
+}
+html.mobile .XDocsPage .XDocsPageNavigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-right: none;
+  border-radius: 0;
+}
+
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationItem:not(:first-child) {
+  position: sticky;
+  top: 89.91px;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationHead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgb(var(--nav-bg-rgb));
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationHead .XDocsPageNavigationHeadLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationHead .XDocsPageNavigationHeadLogo img {
+  width: 50px;
+  height: 50px;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationFooterWrapperSpaceBefore {
+  min-height: 7.5rem;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationFooterWrapper {
+  margin-top: auto;
+  position: sticky;
+  z-index: 11;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationFooter {
+  position: relative;
+  margin-left: -0.5rem;
+  margin-bottom: -0.5rem;
+  width: 350px;
+  min-height: 2.5rem;
+  background: rgb(var(--nav-bg-rgb));
+  color: rgb(var(--muted-rgb));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgb(var(--border-rgb));
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationFooter a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html.mobile .XDocsPage .XDocsPageNavigation .XDocsPageNavigationFooter {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: calc(100% + 1rem);
+  border-right: none;
+}
+
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationFooter img {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationFooter .XDocsPageNavigationFooterConfigButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2.5rem;
+  background-color: rgb(var(--nav-bg-rgb));
+  color: rgb(var(--muted-rgb));
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationFooter .XDocsPageNavigationFooterConfigButton svg {
+  height: 1rem;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationFooter .XDocsPageNavigationFooterConfigButton:hover {
+  background-color: rgb(var(--nav-hover-rgb));
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationFooter .XDocsPageNavigationFooterConfigButton:active {
+  background-color: rgb(var(--nav-pressed-rgb));
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationItem + .XDocsPageNavigationItem {
+  margin-top: 0.25rem;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationItem + .XDocsPageNavigationSubmenu {
+  margin-top: 0.25rem;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationSubmenu + .XDocsPageNavigationItem {
+  margin-top: 0.25rem;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationSubmenu + .XDocsPageNavigationSubmenu {
+  margin-top: 0.25rem;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationItem {
+  z-index: 9;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  background: rgb(var(--nav-bg-rgb));
+  text-decoration: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: rgb(var(--text-rgb));
+  border-radius: 1rem;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationItem .XDocsPageNavigationItemArrow {
+  margin-left: auto;
+  margin-right: 0.33rem;
+  height: 1em;
+  width: 1em;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationItem:hover {
+  background: rgb(var(--nav-hover-rgb));
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationItem:active {
+  background: rgb(var(--nav-pressed-rgb));
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationItem.active {
+  font-weight: 500;
+  background: rgb(var(--nav-active-rgb));
+  color: rgb(var(--nav-active-text-rgb));
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationItem.sticky {
+  position: sticky;
+  top: 89.91px;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationSubmenu {
+  border-radius: 1rem;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationSubmenu .XDocsPageNavigationSubmenuItem:first-child {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationSubmenu .XDocsPageNavigationSubmenuItem:last-child {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationSubmenu .XDocsPageNavigationSubmenuItem {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  background: rgb(var(--nav-bg-rgb));
+  text-decoration: none;
+  cursor: pointer;
+  color: rgb(var(--text-rgb));
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationSubmenu .XDocsPageNavigationSubmenuItem:hover {
+  background: rgb(var(--nav-hover-rgb));
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationSubmenu .XDocsPageNavigationSubmenuItem:active {
+  background: rgb(var(--nav-pressed-rgb));
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationSubmenu .XDocsPageNavigationSubmenuItem:first-child {
+  box-shadow: inset 0 11px 8px -10px rgba(51, 51, 51, 0.1019607843);
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationSubmenu .XDocsPageNavigationSubmenuItem:last-child {
+  box-shadow: inset 0 -11px 8px -10px rgba(51, 51, 51, 0.1019607843);
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationSubmenu .XDocsPageNavigationSubmenuItem:only-child {
+  box-shadow: inset 0 11px 8px -10px rgba(51, 51, 51, 0.1019607843), inset 0 -11px 8px -10px rgba(51, 51, 51, 0.1019607843);
+}
+.XDocsPage .XDocsPageNavigation .XDocsPageNavigationSubmenu .XDocsPageNavigationSubmenuItem.active {
+  font-weight: 500;
+  background: rgb(var(--nav-active-rgb));
+  color: rgb(var(--nav-active-text-rgb));
+}
+.XDocsPage .XDocsPageNavigation [data-navigation-item-expanded=true] .XDocsPageNavigationItemArrow {
+  transform: rotate(180deg);
+}
+.XDocsPage .XDocsPageNavigation [data-navigation-submenu-shown=false] {
+  display: none;
+}
+.XDocsPage .XDocsPageMobileNavigationToggle {
+  position: fixed;
+  z-index: 12;
+  top: 1rem;
+  left: 1rem;
+  height: 60px;
+  width: 60px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: rgb(var(--nav-bg-rgb));
+  border: none;
+  border-radius: 2px;
+  color: rgb(var(--text-rgb));
+}
+html.mobile .XDocsPage .XDocsPageMobileNavigationToggle {
+  display: flex;
+}
+
+.XDocsPage .XDocsPageMobileNavigationToggle svg {
+  width: 26px;
+  height: 26px;
+}
+.XDocsPage .XDocsPageMobileNavigationToggle:not(.active) {
+  background-color: rgb(var(--bg-rgb));
+}
+.XDocsPage .XDocsPageMobileNavigationToggle:not(.active) [data-close-icon=true] {
+  display: none;
+}
+.XDocsPage .XDocsPageMobileNavigationToggle.active [data-menu-icon=true] {
+  display: none;
+}
+.XDocsPage .XDocsPageContent {
+  max-width: 1066px;
+  width: 100%;
+  margin: 3rem auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 0 3rem;
+  padding-top: 0;
+  padding-left: calc(350px + 3rem);
+  padding-bottom: 4rem;
+}
+html.mobile .XDocsPage .XDocsPageContent {
+  margin-top: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.XDocsPage .XDocsPageContent .XDocsPageIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.XDocsPage .XDocsPageContent h1 {
+  text-align: center;
+}
+.XDocsPage .XDocsPageContent .XDocsPageContentBcFw {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+.XDocsPage .XDocsPageContent .XDocsPageContentBcFw a {
+  background-color: rgb(var(--nav-bg-rgb));
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(var(--border-rgb));
+  text-decoration: none;
+  color: rgb(var(--nav-text-rgb));
+}
+.XDocsPage .XDocsPageContent .XDocsPageContentBcFw a:hover {
+  background-color: rgb(var(--nav-hover-rgb));
+}
+.XDocsPage .XDocsPageContent .XDocsPageContentBcFw a:active {
+  background-color: rgb(var(--nav-pressed-rgb));
+}
+.XDocsPage .XDocsPageContent .XDocsPageContentBcFw a[data-is-next=true] {
+  margin-left: auto;
+}
+
+code:not(.shikicode) {
+  padding: 0.1rem 0.5rem;
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  font-family: "Fira Code", monospace;
+  box-shadow: var(--code-shadow);
+}
+
+.XDocsCodeWrapper {
+  position: relative;
+  z-index: 0;
+  border-radius: 1rem;
+  animation: none;
+}
+.XDocsCodeWrapper .shiki {
+  z-index: -1;
+  border-radius: inherit;
+  font-weight: 500;
+  background-color: rgb(var(--code-bg-rgb)) !important;
+  font-size: 1rem;
+  font-family: "Fira Code", monospace;
+  font-weight: 500;
+  overflow-x: auto;
+  min-height: 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgb(var(--border-rgb));
+}
+.XDocsCodeWrapper .shiki::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.XDocsCodeWrapper .shiki::-webkit-scrollbar-track {
+  background: rgb(var(--code-bg-rgb));
+  border-radius: 0.25rem;
+}
+.XDocsCodeWrapper .shiki::-webkit-scrollbar-thumb {
+  background: rgb(var(--muted-rgb));
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.XDocsCodeImages {
+  bottom: -0.125rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.XDocsCodeImages img {
+  height: 1rem;
+  z-index: -1;
+}
+.XDocsCodeImages img:nth-child(5) {
+  height: 2rem;
+}
+.XDocsCodeImages.bottom {
+  top: -0.125rem;
+  bottom: unset;
+  transform: rotate(180deg);
+  filter: grayscale(1);
+}
+html.mobile .XDocsCodeImages {
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+html.mobile .XDocsCodeImages img {
+  height: 0.75rem;
+}
+html.mobile .XDocsCodeImages img:nth-child(5) {
+  height: 1.25rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+table th, table td {
+  padding: 0.5rem;
+  border: 1px solid rgb(var(--border-rgb));
+}
+table th {
+  background: rgb(var(--bg-rgb));
+  color: rgb(var(--text-rgb));
+  font-weight: 500;
+}
+table td {
+  background: rgb(var(--bg-rgb));
+  color: rgb(var(--text-rgb));
+}
+table tr:nth-child(odd) {
+  background: rgb(var(--hover-rgb));
+}
+table tr:nth-child(even) {
+  background: rgb(var(--bg-rgb));
+}
+table tr:hover {
+  background: rgb(var(--hover-rgb));
+}
+table tr:active {
+  background: rgb(var(--pressed-rgb));
+}
+table a {
+  color: rgb(var(--text-rgb));
+  text-decoration: none;
+  font-weight: 500;
+}
+table a:hover {
+  text-decoration: underline;
+}
+table a:active {
+  color: rgb(var(--text-rgb));
+}
+table img {
+  max-width: 100%;
+  height: auto;
+}
+
+blockquote {
+  background: rgba(var(--text-rgb), 0.125);
+  border-left: 0.25rem solid rgb(var(--text-rgb));
+  padding: 0.25rem 1rem;
+  margin: 1rem 0;
+}
+
+hr {
+  border: 1px dashed rgb(var(--border-rgb));
+  margin: 2rem 0;
+}
+hr.table {
+  border: none;
+  border-top: 1px solid rgb(var(--border-rgb));
+  margin: 0.5rem 0;
+}
+
+.XDocsPageNavigationSearch {
+  margin-bottom: 0.25rem;
+}
+.XDocsPageNavigationSearch button {
+  z-index: 9;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgb(var(--nav-bg-rgb));
+  text-decoration: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: rgb(var(--muted-rgb));
+  border-radius: 1rem;
+}
+.XDocsPageNavigationSearch button:hover {
+  background: rgb(var(--nav-hover-rgb));
+}
+.XDocsPageNavigationSearch button:active {
+  background: rgb(var(--nav-pressed-rgb));
+}
+.XDocsPageNavigationSearch iframe {
+  display: none;
+}
+
+.XDocsSearchWrapper {
+  position: fixed;
+  z-index: 2001;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(var(--bg-rgb), 0.5);
+  padding: 1rem;
+}
+.XDocsSearchWrapper .XDocsSearchContainer {
+  max-width: 500px;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background-color: rgb(var(--bg-rgb));
+  color: rgb(var(--text-rgb));
+  box-shadow: var(--code-shadow);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.XDocsSearchWrapper .XDocsSearchContainer input {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 100%;
+  height: 3rem;
+  font-size: 1rem;
+  padding: 0 1rem;
+  border: none;
+  border-bottom: 1px solid rgb(var(--border-rgb));
+  outline: none;
+  font-family: var(--font-family);
+  background-color: rgb(var(--bg-rgb));
+  color: rgb(var(--text-rgb));
+}
+.XDocsSearchWrapper .XDocsSearchContainer input::placeholder {
+  color: rgb(var(--muted-rgb));
+}
+
+.XDocsSearchResults {
+  display: block;
+  overflow-y: auto;
+  max-height: 300px;
+}
+.XDocsSearchResults.empty {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(var(--muted-rgb));
+}
+.XDocsSearchResults a + a {
+  border-top: 1px solid rgb(var(--border-rgb));
+}
+.XDocsSearchResults a {
+  background-color: rgb(var(--bg-rgb));
+  color: rgb(var(--text-rgb));
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  text-decoration: none;
+  outline: none;
+}
+.XDocsSearchResults a:focus {
+  background-color: rgb(var(--hover-rgb));
+}
+.XDocsSearchResults a:hover {
+  background-color: rgb(var(--hover-rgb));
+}
+.XDocsSearchResults a:active {
+  background-color: rgb(var(--pressed-rgb));
+}
+.XDocsSearchResults a:last-child {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.XDocsTableWrapper {
+  overflow-x: auto;
+}
+
+/*# sourceMappingURL=%D1%82%D0%B5%D0%BC%D0%B0.css.map */
