@@ -156,17 +156,8 @@
 <p>Якщо не вказати тип, то він буде визначений автоматично:</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> число_ПІ = </span><span style="color:#79B8FF">3.14</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre></div></pre>
-<p>Також можна визначити ціль без значення, але в такому випадку ви не зможете звертатись до неї допоки не буде визначено
-її значення:</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> число_ПІ: </span><span style="color:#79B8FF">дійсне</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#B392F0">друк_дійсне</span><span style="color:#E1E4E8">(число_ПІ); </span><span style="color:#6A737D">// помилка компіляції</span></span>
-<span class="line"></span></code></pre></div></pre>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> число_ПІ: </span><span style="color:#79B8FF">дійсне</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">число_ПІ = </span><span style="color:#79B8FF">3.14</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#B392F0">друк_дійсне</span><span style="color:#E1E4E8">(число_ПІ); </span><span style="color:#6A737D">// 3.14</span></span>
+<p>Також можна визначити ціль без значення, в такому випадку властивості її обʼєкта будуть заповнені автоматично:</p>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> число_ПІ: </span><span style="color:#79B8FF">дійсне</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// 0.0</span></span>
 <span class="line"></span></code></pre></div></pre>
 <p>Після визначення цілі та її значення, її значення не можна перезаписати:</p>
 <pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">ціль</span><span style="color:#E1E4E8"> число_ПІ = </span><span style="color:#79B8FF">3.14</span><span style="color:#E1E4E8">;</span></span>
