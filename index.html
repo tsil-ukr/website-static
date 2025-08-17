@@ -465,10 +465,16 @@
             />
         </svg>
     </div>
-    <div class="UiMainFooter">Богданович Давид Когут Прихожденко, 2025</div>
+    <div class="UiMainFooter"></div>
 </div>
 
+<script src="./ресурси/isbot.js"></script>
 <script src="./ресурси/ціль.js"></script>
+<script> 
+        if (!isbot(navigator.userAgent)) {
+                document.querySelector(".UiMainFooter").innerText = "Богданович Давид Когут Прихожденко, 2025";
+        }
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS8VPXNCZV"></script>
 <script>
