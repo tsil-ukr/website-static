@@ -217,6 +217,9 @@ pre, code {
 
 .UiMainDownloadWrapper {
   position: relative;
+  max-width: calc(500px + 1rem);
+  width: 100%;
+  margin: 0 auto;
 }
 
 .UiMainButtonDownloadOrWrapper {
