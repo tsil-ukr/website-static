@@ -64,20 +64,6 @@
                         d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
             </svg>
         </button>
-        <div class="TsilNavigationMenu" data-hidden="true">
-            <a href="https://архів.ціль.укр" class="TsilNavigationMenuItem">
-                Архів
-            </a>
-            <a href="https://часопис.ціль.укр" class="TsilNavigationMenuItem">
-                Часопис
-            </a>
-            <a href="./організація/index.html" class="TsilNavigationMenuItem">
-                ОЦ
-            </a>
-            <a target="_blank" href="https://github.com/tsil-ukr/tsil" class="TsilNavigationMenuItem">
-                GitHub
-            </a>
-        </div>
     </div>
     <div class="UiMainGoldList">
         <svg
@@ -466,13 +452,35 @@
         </svg>
     </div>
     <div class="UiMainFooter"></div>
+        <div class="TsilNavigationMenu" data-hidden="true">
+            <a href="https://архів.ціль.укр" class="TsilNavigationMenuItem">
+                Архів
+            </a>
+            <a href="https://часопис.ціль.укр" class="TsilNavigationMenuItem">
+                Часопис
+            </a>
+            <a href="./організація/index.html" class="TsilNavigationMenuItem">
+                ОЦ
+            </a>
+            <a target="_blank" href="https://github.com/tsil-ukr/tsil" class="TsilNavigationMenuItem">
+                GitHub
+            </a>
+        </div>
 </div>
 
 <script src="./ресурси/isbot.js"></script>
 <script src="./ресурси/ціль.js"></script>
 <script> 
         if (!isbot(navigator.userAgent)) {
-                document.querySelector(".UiMainFooter").innerText = "Богданович Давид Когут Прихожденко, 2025";
+                document.querySelector(".UiMainFooter").innerHTML = "Богданович Давид Когут Прихожденко, ОЦ, ОО";
+
+                document.querySelector(".UiMainFooter").addEventListener("mouseenter", () => {
+                        document.querySelector(".UiMainFooter").innerHTML = "Богданович Давид Когут Прихожденко та Ц та <span style='letter-spacing: -0.3ch'>ОО</span>";
+                })
+
+                document.querySelector(".UiMainFooter").addEventListener("mouseleave", () => {
+                        document.querySelector(".UiMainFooter").innerHTML = "Богданович Давид Когут Прихожденко, ОЦ, ОО";
+                })
         }
 </script>
 <!-- Google tag (gtag.js) -->
