@@ -475,13 +475,13 @@ code {
 
 @keyframes spin {
   0% {
-    --x: 0deg;
+    --x: -360deg;
   }
   50% {
     --x: -180deg;
   }
   100% {
-    --x: -360deg;
+    --x: 0deg;
   }
 }
 
