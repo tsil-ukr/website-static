@@ -61,7 +61,7 @@ pre, code {
 
 .UiMain {
   min-height: 100%;
-  padding-top: 5rem;
+  padding-top: max(5rem, calc(50vh - 300px));
   padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
