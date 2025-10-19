@@ -351,11 +351,12 @@ pre, code {
   margin-top: 4rem;
   color: #7D2E34;
   text-align: center;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 500px) {
   .UiMainFooter {
-    font-size: 0.8rem;
+    
   }
 }
 
