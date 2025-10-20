@@ -448,6 +448,16 @@ code {
   initial-value: 0deg;
 }
 
+@property --color-1 {
+  syntax: "<color>";
+  inherits: true;
+}
+
+@property --color-2 {
+  syntax: "<color>";
+  inherits: true;
+}
+
 .UiCodeBlock {
   position: relative;
   z-index: 0;
@@ -463,6 +473,8 @@ code {
   --f: 300deg;
   --g: 330deg;
   --x: 0deg;
+  --color-1: #7D2E34;
+  --color-2: #ffe173;
 }
 
 .UiCodeBlock:before {
@@ -477,11 +489,11 @@ code {
   border-radius: 1rem;
   background: conic-gradient(
       from var(--x),
-      #7D2E34,
+      var(--color-1),
       #0000 var(--a) var(--b),
-      #ffe173 var(--c) var(--d),
+      var(--color-2) var(--c) var(--d),
       #0000 var(--e) var(--f),
-      #7D2E34 var(--g)
+      var(--color-1) var(--g)
   );
   background-color: #1d1315;
   border: 2px solid #1d1315;
@@ -521,7 +533,7 @@ code {
     --x: -360deg;
   }
   50% {
-    --x: -180deg;
+    --x: -150deg;
   }
   100% {
     --x: 0deg;
