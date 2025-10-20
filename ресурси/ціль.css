@@ -346,7 +346,7 @@ pre, code {
 }
 
 .UiMainFooter {
-  z-index: 10;
+  z-index: 1;
   margin: 0 auto;
   margin-top: 4rem;
   color: #7D2E34;
@@ -617,6 +617,32 @@ code {
 .TsilNavigationMenuItem:active {
   background: black;
   color: white;
+}
+
+.UiMainDocsWrapper {
+  position: relative;
+}
+
+.UiMainLeo {
+  position: absolute;
+  top: calc(100%);
+  display: none;
+  border-top: 8px solid transparent;
+  z-index: 10;
+}
+
+.UiMainLeo img {
+  width: 100%;
+  object-fit: contain;
+  border: 4px solid #7D2E34;
+}
+
+.UiMainLeo:hover img {
+  border: 4px solid #1d1315;
+}
+
+.UiMainDocsWrapper:hover .UiMainLeo {
+  display: block;
 }
 
 /*
