@@ -150,17 +150,17 @@
 що можуть бути змінені в будь-який момент. Деякі речі можуть не працювати, або мати неочікувану поведінку.</p>
 </blockquote>
 <p>Створіть файл <code>привіт.ц</code> та заповніть його кодом:</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">зовнішня</span><span style="color:#F97583"> дія</span><span style="color:#B392F0"> надрукувати_ю8</span><span style="color:#E1E4E8">(розмір: </span><span style="color:#79B8FF">натуральне</span><span style="color:#E1E4E8">, </span></span>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#F97583">зовнішня</span><span style="color:#F97583"> дія</span><span style="color:#B392F0"> надрукувати_ю8</span><span style="color:#E1E4E8">(розмір: </span><span style="color:#79B8FF">натуральне</span><span style="color:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#E1E4E8">                            дані: </span><span style="color:#79B8FF">памʼять</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">н8</span><span style="color:#E1E4E8">>);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583">зовнішня</span><span style="color:#F97583"> дія</span><span style="color:#B392F0"> запустити</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">ц32</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">зовнішня</span><span style="color:#F97583"> дія</span><span style="color:#B392F0"> запустити</span><span style="color:#E1E4E8">() -> </span><span style="color:#79B8FF">ц32</span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#F97583">  змінна</span><span style="color:#E1E4E8"> привітання = </span><span style="color:#79B8FF">ю8</span><span style="color:#9ECBFF">"Вперед до Цілі!"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#B392F0">  надрукувати_ю8</span><span style="color:#E1E4E8">(</span></span>
-<span class="line"><span style="color:#E1E4E8">    привітання.розмір, </span></span>
+<span class="line"><span style="color:#E1E4E8">    привітання.розмір,</span></span>
 <span class="line"><span style="color:#E1E4E8">    привітання.дані</span></span>
 <span class="line"><span style="color:#E1E4E8">  );</span></span>
-<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#F97583">  вернути</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre></div></pre>
@@ -173,7 +173,7 @@
 <span class="line"><span style="color:#F97583">typedef</span><span style="color:#F97583"> uint64_t</span><span style="color:#E1E4E8"> н64;</span></span>
 <span class="line"><span style="color:#F97583">typedef</span><span style="color:#F97583"> size_t</span><span style="color:#E1E4E8"> натуральне;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583">extern</span><span style="color:#F97583"> void</span><span style="color:#E1E4E8"> надрукувати_ю8(натуральне розмір, </span></span>
+<span class="line"><span style="color:#F97583">extern</span><span style="color:#F97583"> void</span><span style="color:#E1E4E8"> надрукувати_ю8(натуральне розмір,</span></span>
 <span class="line"><span style="color:#E1E4E8">                           н8</span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> дані) {</span></span>
 <span class="line"><span style="color:#B392F0">  printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">%.*s\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, (</span><span style="color:#F97583">int</span><span style="color:#E1E4E8">)розмір, (</span><span style="color:#F97583">char*</span><span style="color:#E1E4E8">)дані);</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span>
@@ -185,7 +185,7 @@
 <span class="line"><span style="color:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre></div></pre>
 <p>Після цього скомпілюйте програму цими командами:</p>
-<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#B392F0">ціль</span><span style="color:#9ECBFF"> скомпілювати</span><span style="color:#9ECBFF"> привіт.ц</span></span>
+<pre><div class="XDocsCodeWrapper"><pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code class="shikicode"><span class="line"><span style="color:#B392F0">ціль</span><span style="color:#9ECBFF"> привіт.ц.ллвмо</span><span style="color:#9ECBFF"> скомпілювати</span><span style="color:#9ECBFF"> привіт.ц</span></span>
 <span class="line"><span style="color:#B392F0">clang</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> привіт</span><span style="color:#9ECBFF"> привіт.ц.ллвмо</span><span style="color:#9ECBFF"> hello.c</span></span>
 <span class="line"></span></code></pre></div></pre>
 <p>Та зрештою запустіть програму:</p>
