@@ -416,7 +416,7 @@ code:not(.shikicode) {
   border-radius: inherit;
   font-weight: 500;
   background-color: rgb(var(--code-bg-rgb)) !important;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Fira Code", monospace;
   font-weight: 500;
   overflow-x: auto;
