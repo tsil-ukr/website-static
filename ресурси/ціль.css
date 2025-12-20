@@ -361,17 +361,6 @@ pre, code {
   backdrop-filter: blur(2px);
 }
 
-.UiMainFooter img:hover {
-  position: fixed;
-  max-height: 80vh;
-  max-width: 80vw;
-  width: 100%;
-  height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .circled {
   position: relative;
   margin-left: 0.25rem;
@@ -543,7 +532,7 @@ code {
 
 .TsilNavigationMenu {
   position: fixed;
-  z-index: 1001;
+  z-index: 1003;
   top: calc(var(--menu-top) + 64px);
   left: calc(var(--menu-left) - 282px + 48px);
   background-color: #fff6e0;
