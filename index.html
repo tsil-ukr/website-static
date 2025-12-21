@@ -459,7 +459,9 @@
             />
         </svg>
     </div>
-    <div class="UiMainFooter"></div>
+    <div class="UiMainFooter">
+        <img alt='ОЦ' src='./організація/ресурси/тема/організація.лого1.svg'>Організація <span>Ц</span>
+    </div>
 
     <div class="TsilNavigationMenu" data-hidden="true">
         <a href="https://архів.ціль.укр" class="TsilNavigationMenuItem">
@@ -476,19 +478,6 @@
 
 <script src="./ресурси/isbot.js"></script>
 <script src="./ресурси/ціль.js"></script>
-<script>
-        if (!isbot(navigator.userAgent)) {
-                document.querySelector(".UiMainFooter").innerHTML = "Богданович Давид Когут Прихожденко, ОЦ, ОО";
-
-                document.querySelector(".UiMainFooter").addEventListener("mouseenter", () => {
-                        document.querySelector(".UiMainFooter").innerHTML = "Богданович Давид Когут Прихожденко та <img alt='ОЦ' src='./організація/ресурси/тема/організація.лого1.svg'> та <span style='letter-spacing: -0.3ch'>ОО</span>";
-                })
-
-                document.querySelector(".UiMainFooter").addEventListener("mouseleave", () => {
-                        document.querySelector(".UiMainFooter").innerHTML = "Богданович Давид Когут Прихожденко, ОЦ, ОО";
-                })
-        }
-</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS8VPXNCZV"></script>
 <script>
