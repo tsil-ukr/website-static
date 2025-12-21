@@ -357,7 +357,7 @@ pre, code {
 
 .UiMainFooter img {
   margin-top: 0.25rem;
-  margin-right: calc(0.75rem + 1vw);
+  margin-right: calc(1rem + 1vw);
   height: 1em;
   object-fit: contain;
 }
