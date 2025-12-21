@@ -506,8 +506,26 @@ code {
   display: none;
 }
 
-.UiCodeBlock .shiki * {
+.UiCodeBlock .shiki *,
+.UiMainFooter {
+  opacity: 0;
+}
+
+html.readyToAnimate .UiCodeBlock {
+  animation: spin 2s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+html.readyToAnimate .UiCodeBlock .shiki * {
   animation: opacity 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+html.readyToAnimate .UiMainFooter {
+  animation: opacity 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+html.animationsDone .UiCodeBlock .shiki *,
+html.animationsDone .UiMainFooter {
+  opacity: 1;
 }
 
 @keyframes opacity {
