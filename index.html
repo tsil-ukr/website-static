@@ -1,495 +1,618 @@
 <html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>Ціль</title>
 
-    <meta name="description" content="Надійна українська мова програмування">
-    <meta name="keywords"
-          content="ціль, мова програмування, програмування, українська мова програмування, українська мова, ціль мова програмування, ціль мова">
+    <meta name="description" content="Надійна українська мова програмування" />
+    <meta
+      name="keywords"
+      content="ціль, мова програмування, програмування, українська мова програмування, українська мова, ціль мова програмування, ціль мова"
+    />
 
-    <link rel="icon" type="image/png" href="./ресурси/ціль.лого.png">
-    <link rel="icon" sizes="any" type="image/svg+xml" href="./ресурси/ціль.лого.svg">
+    <link rel="icon" type="image/png" href="./ресурси/ціль.лого.png" />
+    <link
+      rel="icon"
+      sizes="any"
+      type="image/svg+xml"
+      href="./ресурси/ціль.лого.svg"
+    />
 
-    <link rel="stylesheet" type="text/css" href="./ресурси/ціль.css?3">
-</head>
-<body>
-<div class="UiMain">
-    <div class="UiMainLogo">
-        <img src="./ресурси/ціль.лого.svg" alt=""/>
-        Ціль
-    </div>
-    <div class="UiMainTitle">Звичайна мова <br>для надзвичайних завдань</div>
-    <div class="UiMainCode">
-        <div id="UiCodeBlock" class="UiCodeBlock">
-        <pre class="shiki github-dark" style="background-color: #24292e; color: #e1e4e8" tabindex="0"><code><span
-                class="line"><span style="color:#F97583">ціль</span><span
-                style="color:#E1E4E8"> Україна = </span><span
-                style="color:#B392F0">створити</span><span style="color:#E1E4E8">(Рай).</span></span><span
-                class="line"></span></code></pre>
+    <style>
+      @font-face {
+        font-family: "Overpass";
+        src: url("ресурси/Overpass/Overpass.ttf") format("truetype");
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Overpass";
+        src: url("ресурси/Overpass/Overpass-Italic.ttf") format("truetype");
+        font-style: italic;
+      }
+
+      @font-face {
+        font-family: "Fira Code";
+        src: url("ресурси/FiraCode.ttf") format("truetype");
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      html {
+        --font-family: "Overpass", sans-serif;
+        --code-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        width: 100%;
+        height: 100%;
+        font-family: var(--font-family);
+        background: #fff6e0;
+        color: #1d1315;
+        font-feature-settings: "liga" 0;
+        font-variant-ligatures: none;
+      }
+
+      html.dark img:not(.no-dark-shadow),
+      html.dark svg:not(.no-dark-shadow) {
+        filter: drop-shadow(0 0 1px white);
+      }
+
+      button {
+        font-family: var(--font-family);
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      pre,
+      code {
+        font-family: "Fira Code", monospace !important;
+        font-weight: 500;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .UiMain {
+        z-index: 10;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 3rem;
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .UiMainHead {
+        display: flex;
+        align-items: center;
+      }
+
+      .UiMainHeadLogo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .UiMainHeadLogo img {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+      }
+
+      .UiMainHeadNameContainer {
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .UiMainHeadName {
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1;
+      }
+
+      .UiMainHeadSubname {
+        margin-top: 0.125rem;
+        font-size: 0.875rem;
+        line-height: 1;
+        font-family: "Fira Code", monospace !important;
+      }
+
+      .UiMainTitle {
+        z-index: 10;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        max-width: 30ch;
+        font-size: 1.25rem;
+        text-align: left;
+      }
+
+      .UiMainTitleAlpha {
+        color: #7d2e34;
+        font-style: italic;
+        font-weight: lighter;
+      }
+
+      .UiMainButton {
+        --border-width: 4px;
+        height: 3rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #7d2e34;
+        color: white;
+        border: var(--border-width) solid #7d2e34;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .UiMainButton svg {
+        height: 1rem;
+      }
+
+      .UiMainButton:hover {
+        background: #1d1315;
+        color: white;
+        border: var(--border-width) solid #1d1315;
+        cursor: pointer;
+      }
+
+      .UiMainButton:active {
+        background: black;
+        color: white;
+        border: var(--border-width) solid black;
+      }
+
+      .UiMainButton.outline {
+        background: transparent;
+        border: var(--border-width) solid #7d2e34;
+        color: #7d2e34;
+      }
+
+      .UiMainButton.outline:hover {
+        background: #1d1315;
+        color: white;
+        border: var(--border-width) solid #1d1315;
+        cursor: pointer;
+      }
+
+      .UiMainButton.outline:active {
+        background: black;
+        color: white;
+        border: var(--border-width) solid black;
+      }
+
+      .UiMainButton.light {
+        --border-width: 1px;
+        height: 2.5rem;
+      }
+
+      .UiMainButtons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .UiMainButtonsFirstLine {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0.5rem;
+      }
+
+      .UiMainButtonsSecondLine {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #7d2e34;
+        height: 30px;
+      }
+
+      .UiMainButtonDownloadUkrInstall {
+        font-size: 0.9rem;
+        color: #7d2e34;
+      }
+
+      .UiMainButtonDownloadUkrInstall a {
+        color: #7d2e34;
+      }
+
+      .UiMainButtonsThirdLine {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0.5rem;
+      }
+
+      .UiMainRight {
+        display: flex;
+        flex-direction: column;
+      }
+
+      @property --a {
+        syntax: "<angle>";
+        inherits: true;
+        initial-value: 30deg;
+      }
+
+      @property --b {
+        syntax: "<angle>";
+        inherits: true;
+        initial-value: 120deg;
+      }
+
+      @property --c {
+        syntax: "<angle>";
+        inherits: true;
+        initial-value: 150deg;
+      }
+
+      @property --d {
+        syntax: "<angle>";
+        inherits: true;
+        initial-value: 180deg;
+      }
+
+      @property --e {
+        syntax: "<angle>";
+        inherits: true;
+        initial-value: 210deg;
+      }
+
+      @property --f {
+        syntax: "<angle>";
+        inherits: true;
+        initial-value: 300deg;
+      }
+
+      @property --g {
+        syntax: "<angle>";
+        inherits: true;
+        initial-value: 330deg;
+      }
+
+      @property --x {
+        syntax: "<angle>";
+        inherits: true;
+        initial-value: 0deg;
+      }
+
+      @property --color-1 {
+        syntax: "<color>";
+        inherits: true;
+      }
+
+      @property --color-2 {
+        syntax: "<color>";
+        inherits: true;
+      }
+
+      .UiCodeBlock {
+        position: relative;
+        z-index: 0;
+        margin-top: 0.25rem;
+        margin-left: 0.25rem;
+        max-width: calc(100% - 0.5rem);
+        border-radius: 0.25rem;
+        --a: 30deg;
+        --b: 120deg;
+        --c: 150deg;
+        --d: 180deg;
+        --e: 210deg;
+        --f: 300deg;
+        --g: 330deg;
+        --x: 0deg;
+        --color-1: #7d2e34;
+        --color-2: #ffe173;
+      }
+
+      .UiCodeBlock:before {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: -0.25rem;
+        left: -0.25rem;
+        right: -0.25rem;
+        bottom: -0.25rem;
+        border-radius: 0.25rem;
+        background: conic-gradient(
+          from var(--x),
+          var(--color-1),
+          #0000 var(--a) var(--b),
+          var(--color-2) var(--c) var(--d),
+          #0000 var(--e) var(--f),
+          var(--color-1) var(--g)
+        );
+        background-color: #1d1315;
+        border: 1px solid #1d1315;
+      }
+
+      .UiCodeBlock .shiki {
+        z-index: -1;
+        padding: 0.5rem;
+        border-radius: inherit;
+        background-color: #1d1315 !important;
+        font-size: 0.9rem;
+        font-family: "Fira Code", monospace;
+        overflow-x: auto;
+        margin: 0;
+      }
+
+      .UiCodeBlock .shiki::-webkit-scrollbar {
+        display: none;
+      }
+
+      .UiCodeBlock .shiki * {
+        opacity: 0;
+      }
+
+      html.readyToAnimate .UiCodeBlock {
+        animation: spin 2s cubic-bezier(0.4, 0.2, 0.2, 1);
+      }
+
+      html.readyToAnimate .UiCodeBlock .shiki * {
+        animation: opacity 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+      }
+
+      html.animationsDone .UiCodeBlock .shiki * {
+        opacity: 1;
+      }
+
+      @keyframes opacity {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          --x: -360deg;
+        }
+        50% {
+          --x: -150deg;
+        }
+        100% {
+          --x: 0deg;
+        }
+      }
+
+      .UiRunCommand {
+        padding: 0.25rem 0.5rem;
+        padding-top: 0.3rem;
+        background: #7d2e34;
+        color: white;
+        font-family: "Fira Code", monospace;
+        font-size: 0.8rem;
+        border-bottom-left-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+      }
+
+      .UiOrganization {
+        z-index: 2;
+        margin-top: auto;
+        color: #7d2e34;
+        text-align: center;
+        font-size: 0.8rem;
+        letter-spacing: max(0.5rem, min(1vw, 1rem));
+      }
+
+      .UiOrganization img {
+        margin-top: 0.25rem;
+        transform: translateY(0.08rem);
+        margin-right: calc(1rem + 1vw);
+        height: 1em;
+        object-fit: contain;
+      }
+
+      @media (max-height: 500px) and (orientation: landscape) {
+        body {
+          height: auto;
+          min-height: 100vh;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 950px) {
+        html {
+          height: auto;
+          min-height: 100%;
+        }
+
+        body {
+          height: auto;
+          min-height: 100vh;
+          min-height: 100dvh;
+        }
+
+        .UiMain {
+          grid-template-columns: 1fr;
+          grid-gap: 2rem;
+          padding: 2rem 1.25rem;
+        }
+
+        .UiMainTitle {
+          max-width: none;
+        }
+
+        .UiCodeBlock .shiki {
+          font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+        }
+
+        .UiRunCommand {
+          font-size: clamp(0.65rem, 2vw, 0.8rem);
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+
+        .UiOrganization {
+          margin-top: 2rem;
+          padding-bottom: 1rem;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .UiMain {
+          padding: 1.5rem 1rem;
+          grid-gap: 1.5rem;
+        }
+
+        .UiMainHeadName {
+          font-size: 1.75rem;
+        }
+
+        .UiMainTitle {
+          font-size: 1.1rem;
+        }
+
+        .UiMainButton {
+          font-size: 0.875rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="UiMain">
+      <div class="UiMainLeft">
+        <div class="UiMainHead">
+          <div class="UiMainHeadLogo">
+            <img src="./ресурси/ціль.лого.svg" alt="" />
+          </div>
+          <div class="UiMainHeadNameContainer">
+            <div class="UiMainHeadName">Ціль</div>
+            <div class="UiMainHeadSubname">Україна = створити(Рай)</div>
+          </div>
         </div>
-    </div>
-    <div class="UiMainDownloadWrapper download-outside">
-        <a href="https://архів.ціль.укр/випуск-цілі-0.51.0.html" class="UiMainButton">
-            Завантажити (0.51.0)
-        </a>
-        <div class="UiMainButtonDownloadOrWrapper">
-            <code class="UiMainButtonDownloadUkrInstall"><a href="https://укр.кдб.укр">укр</a> встановити
-                ціль</code>
+
+        <div class="UiMainTitle">
+          Звичайна мова для створення програм. Українською!
+          <span class="UiMainTitleAlpha">(альфа)</span>
         </div>
-    </div>
-    <div class="UiMainButtons">
-        <div class="UiMainDownloadWrapper download-inside">
-            <a href="https://архів.ціль.укр/випуск-цілі-0.51.0.html" class="UiMainButton">
-                Завантажити (0.51.0)
+
+        <div class="UiMainButtons">
+          <div class="UiMainButtonsFirstLine">
+            <a
+              href="https://архів.ціль.укр/випуск-цілі-0.51.0.html"
+              class="UiMainButton"
+            >
+              Завантажити (0.51.0)
             </a>
-            <div class="UiMainButtonDownloadOrWrapper">
-                <code class="UiMainButtonDownloadUkrInstall"><a href="https://укр.кдб.укр">укр</a> встановити
-                    ціль</code>
-            </div>
-        </div>
-
-        <div class="UiMainDocsWrapper">
-          <a id="docsbutton" href="./0.51.0/документація/index.html" class="UiMainButton outline">
+            <a
+              href="./0.51.0/документація/index.html"
+              class="UiMainButton outline"
+            >
               Документація
-          </a>
+            </a>
+          </div>
 
-          <a href="./ресурси/мяв.jpg" target="_blank" class="UiMainLeo">
-            <img src="./ресурси/мяв.jpg" alt="">
-          </a>
+          <div class="UiMainButtonsSecondLine">
+            <code class="UiMainButtonDownloadUkrInstall">
+              <a href="https://укр.кдб.укр">укр</a> встановити ціль
+            </code>
+          </div>
+
+          <div class="UiMainButtonsThirdLine">
+            <a
+              target="_blank"
+              href="https://архів.ціль.укр"
+              class="UiMainButton light outline"
+            >
+              Архів
+            </a>
+            <a
+              href="https://часопис.ціль.укр"
+              class="UiMainButton light outline"
+            >
+              Часопис
+            </a>
+            <a
+              target="_blank"
+              href="https://github.com/tsil-ukr/tsil"
+              class="UiMainButton light outline"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="UiMainRight">
+        <div class="UiCodeExample">
+          <div class="UiCodeBlock">
+            <pre
+              class="shiki github-dark"
+              style="background-color: #24292e; color: #e1e4e8"
+              tabindex="0"
+            ><code class="shikicode"><span class="line"><span style="color:#F97583">взяти біб</span><span style="color:#E1E4E8"> надрукувати;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">зовнішня</span><span style="color:#F97583"> дія</span><span style="color:#E1E4E8"> старт() -&gt; </span><span style="color:#79B8FF">ц32</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  біб::надрукувати(</span><span style="color:#9ECBFF">"Вперед до Цілі!"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  вернути</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+          </div>
+
+          <div class="UiRunCommand">ціль привіт перетворити привіт.ц</div>
         </div>
 
-        <button data-navigation-menu-toggle="true" class="UiMainButton outline more">
-            <svg data-menu-icon="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
-                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-            </svg>
-            <svg data-close-icon="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
-                 fill="currentColor">
-                <path
-                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-            </svg>
-        </button>
-    </div>
-    <div class="UiMainGoldList">
-        <svg
-                class="UiMainGold"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 511.882 511.882"
-                xml:space="preserve"
-        >
-          <polygon
-                  style="fill: #f6bb42"
-                  points="350.216,176.572 278.374,158.615 37.038,264.123 0,338.207 125.753,374.324 386.13,258.531
-	"
-          />
-            <polygon
-                    style="fill: #ffce54"
-                    points="350.216,176.572 107.756,284.345 125.753,374.324 386.13,258.531 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="107.756,284.345 37.038,264.123 0.015,338.207 125.753,374.324 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="475.969,212.682 404.127,194.717 162.791,300.232 125.753,374.324 251.504,410.41
-	511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="475.969,212.682 233.508,320.431 251.504,410.41 511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="233.508,320.431 162.791,300.232 125.753,374.324 251.504,410.41 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="396.316,119.429 324.488,101.473 103.867,198.435 66.843,272.519 192.596,308.621
-	432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="396.316,119.429 174.6,218.641 192.596,308.621 432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="174.6,218.641 103.867,198.435 66.843,272.519 192.596,308.621 "
-            />
-        </svg>
-        <svg
-                class="UiMainGold"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 511.882 511.882"
-                xml:space="preserve"
-        >
-          <polygon
-                  style="fill: #f6bb42"
-                  points="350.216,176.572 278.374,158.615 37.038,264.123 0,338.207 125.753,374.324 386.13,258.531
-	"
-          />
-            <polygon
-                    style="fill: #ffce54"
-                    points="350.216,176.572 107.756,284.345 125.753,374.324 386.13,258.531 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="107.756,284.345 37.038,264.123 0.015,338.207 125.753,374.324 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="475.969,212.682 404.127,194.717 162.791,300.232 125.753,374.324 251.504,410.41
-	511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="475.969,212.682 233.508,320.431 251.504,410.41 511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="233.508,320.431 162.791,300.232 125.753,374.324 251.504,410.41 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="396.316,119.429 324.488,101.473 103.867,198.435 66.843,272.519 192.596,308.621
-	432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="396.316,119.429 174.6,218.641 192.596,308.621 432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="174.6,218.641 103.867,198.435 66.843,272.519 192.596,308.621 "
-            />
-        </svg>
-        <svg
-                class="UiMainGold"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 511.882 511.882"
-                xml:space="preserve"
-        >
-          <polygon
-                  style="fill: #f6bb42"
-                  points="350.216,176.572 278.374,158.615 37.038,264.123 0,338.207 125.753,374.324 386.13,258.531
-	"
-          />
-            <polygon
-                    style="fill: #ffce54"
-                    points="350.216,176.572 107.756,284.345 125.753,374.324 386.13,258.531 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="107.756,284.345 37.038,264.123 0.015,338.207 125.753,374.324 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="475.969,212.682 404.127,194.717 162.791,300.232 125.753,374.324 251.504,410.41
-	511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="475.969,212.682 233.508,320.431 251.504,410.41 511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="233.508,320.431 162.791,300.232 125.753,374.324 251.504,410.41 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="396.316,119.429 324.488,101.473 103.867,198.435 66.843,272.519 192.596,308.621
-	432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="396.316,119.429 174.6,218.641 192.596,308.621 432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="174.6,218.641 103.867,198.435 66.843,272.519 192.596,308.621 "
-            />
-        </svg>
-        <svg
-                class="UiMainGold"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 511.882 511.882"
-                xml:space="preserve"
-        >
-          <polygon
-                  style="fill: #f6bb42"
-                  points="350.216,176.572 278.374,158.615 37.038,264.123 0,338.207 125.753,374.324 386.13,258.531
-	"
-          />
-            <polygon
-                    style="fill: #ffce54"
-                    points="350.216,176.572 107.756,284.345 125.753,374.324 386.13,258.531 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="107.756,284.345 37.038,264.123 0.015,338.207 125.753,374.324 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="475.969,212.682 404.127,194.717 162.791,300.232 125.753,374.324 251.504,410.41
-	511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="475.969,212.682 233.508,320.431 251.504,410.41 511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="233.508,320.431 162.791,300.232 125.753,374.324 251.504,410.41 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="396.316,119.429 324.488,101.473 103.867,198.435 66.843,272.519 192.596,308.621
-	432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="396.316,119.429 174.6,218.641 192.596,308.621 432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="174.6,218.641 103.867,198.435 66.843,272.519 192.596,308.621 "
-            />
-        </svg>
-        <svg
-                class="UiMainGold"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 511.882 511.882"
-                xml:space="preserve"
-        >
-          <polygon
-                  style="fill: #f6bb42"
-                  points="350.216,176.572 278.374,158.615 37.038,264.123 0,338.207 125.753,374.324 386.13,258.531
-	"
-          />
-            <polygon
-                    style="fill: #ffce54"
-                    points="350.216,176.572 107.756,284.345 125.753,374.324 386.13,258.531 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="107.756,284.345 37.038,264.123 0.015,338.207 125.753,374.324 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="475.969,212.682 404.127,194.717 162.791,300.232 125.753,374.324 251.504,410.41
-	511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="475.969,212.682 233.508,320.431 251.504,410.41 511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="233.508,320.431 162.791,300.232 125.753,374.324 251.504,410.41 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="396.316,119.429 324.488,101.473 103.867,198.435 66.843,272.519 192.596,308.621
-	432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="396.316,119.429 174.6,218.641 192.596,308.621 432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="174.6,218.641 103.867,198.435 66.843,272.519 192.596,308.621 "
-            />
-        </svg>
-        <svg
-                class="UiMainGold"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 511.882 511.882"
-                xml:space="preserve"
-        >
-          <polygon
-                  style="fill: #f6bb42"
-                  points="350.216,176.572 278.374,158.615 37.038,264.123 0,338.207 125.753,374.324 386.13,258.531
-	"
-          />
-            <polygon
-                    style="fill: #ffce54"
-                    points="350.216,176.572 107.756,284.345 125.753,374.324 386.13,258.531 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="107.756,284.345 37.038,264.123 0.015,338.207 125.753,374.324 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="475.969,212.682 404.127,194.717 162.791,300.232 125.753,374.324 251.504,410.41
-	511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="475.969,212.682 233.508,320.431 251.504,410.41 511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="233.508,320.431 162.791,300.232 125.753,374.324 251.504,410.41 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="396.316,119.429 324.488,101.473 103.867,198.435 66.843,272.519 192.596,308.621
-	432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="396.316,119.429 174.6,218.641 192.596,308.621 432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="174.6,218.641 103.867,198.435 66.843,272.519 192.596,308.621 "
-            />
-        </svg>
-        <svg
-                class="UiMainGold"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 511.882 511.882"
-                xml:space="preserve"
-        >
-          <polygon
-                  style="fill: #f6bb42"
-                  points="350.216,176.572 278.374,158.615 37.038,264.123 0,338.207 125.753,374.324 386.13,258.531
-	"
-          />
-            <polygon
-                    style="fill: #ffce54"
-                    points="350.216,176.572 107.756,284.345 125.753,374.324 386.13,258.531 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="107.756,284.345 37.038,264.123 0.015,338.207 125.753,374.324 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="475.969,212.682 404.127,194.717 162.791,300.232 125.753,374.324 251.504,410.41
-	511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="475.969,212.682 233.508,320.431 251.504,410.41 511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="233.508,320.431 162.791,300.232 125.753,374.324 251.504,410.41 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="396.316,119.429 324.488,101.473 103.867,198.435 66.843,272.519 192.596,308.621
-	432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="396.316,119.429 174.6,218.641 192.596,308.621 432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="174.6,218.641 103.867,198.435 66.843,272.519 192.596,308.621 "
-            />
-        </svg>
-        <svg
-                class="UiMainGold"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 511.882 511.882"
-                xml:space="preserve"
-        >
-          <polygon
-                  style="fill: #f6bb42"
-                  points="350.216,176.572 278.374,158.615 37.038,264.123 0,338.207 125.753,374.324 386.13,258.531
-	"
-          />
-            <polygon
-                    style="fill: #ffce54"
-                    points="350.216,176.572 107.756,284.345 125.753,374.324 386.13,258.531 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="107.756,284.345 37.038,264.123 0.015,338.207 125.753,374.324 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="475.969,212.682 404.127,194.717 162.791,300.232 125.753,374.324 251.504,410.41
-	511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="475.969,212.682 233.508,320.431 251.504,410.41 511.882,294.625 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="233.508,320.431 162.791,300.232 125.753,374.324 251.504,410.41 "
-            />
-            <polygon
-                    style="fill: #f6bb42"
-                    points="396.316,119.429 324.488,101.473 103.867,198.435 66.843,272.519 192.596,308.621
-	432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #ffce54"
-                    points="396.316,119.429 174.6,218.641 192.596,308.621 432.245,201.379 "
-            />
-            <polygon
-                    style="fill: #e8aa3d"
-                    points="174.6,218.641 103.867,198.435 66.843,272.519 192.596,308.621 "
-            />
-        </svg>
-    </div>
-    <div class="UiMainFooter">
-        <img alt='ОЦ' src='./ресурси/організація.лого1.svg'>Організація <span>Ц</span>
+        <div class="UiOrganization">
+          <img alt="ОЦ" src="./ресурси/організація.лого1.svg" />Організація
+          <span>Ц</span>
+        </div>
+      </div>
     </div>
 
-    <div class="TsilNavigationMenu" data-hidden="true">
-        <a href="https://архів.ціль.укр" class="TsilNavigationMenuItem">
-            Архів
-        </a>
-        <a href="https://часопис.ціль.укр" class="TsilNavigationMenuItem">
-            Часопис
-        </a>
-        <a target="_blank" href="https://github.com/tsil-ukr/tsil" class="TsilNavigationMenuItem">
-            GitHub
-        </a>
-    </div>
-</div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          document.documentElement.classList.add("readyToAnimate");
 
-<script src="./ресурси/isbot.js"></script>
-<script src="./ресурси/ціль.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LS8VPXNCZV"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
+          setTimeout(() => {
+            document.documentElement.classList.add("animationsDone");
+          }, 500);
+        }, 250);
+      });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-LS8VPXNCZV"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
+      function gtag() {
         dataLayer.push(arguments);
-    }
+      }
 
-    gtag("js", new Date());
+      gtag("js", new Date());
 
-    gtag("config", "G-LS8VPXNCZV");
-</script>
-</body>
+      gtag("config", "G-LS8VPXNCZV");
+    </script>
+  </body>
 </html>
